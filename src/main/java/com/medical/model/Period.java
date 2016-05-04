@@ -1,10 +1,14 @@
 package com.medical.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Created by bahram on 5/3/16.
  */
+@Entity
+@Table
 public class Period {
     private Date startDate;
     private Date endDate;
