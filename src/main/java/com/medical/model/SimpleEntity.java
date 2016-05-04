@@ -1,4 +1,4 @@
-package com.demisco.model;
+package com.medical.model;
 
 import java.util.Date;
 

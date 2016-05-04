@@ -1,4 +1,4 @@
-package com.demisco.model;
+package com.medical.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

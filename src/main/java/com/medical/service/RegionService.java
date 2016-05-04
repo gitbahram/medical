@@ -1,6 +1,6 @@
-package com.demisco.service;
+package com.medical.service;
 
-import com.demisco.model.Region;
+import com.medical.model.Region;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

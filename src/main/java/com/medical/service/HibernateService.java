@@ -1,4 +1,4 @@
-package com.demisco.service;
+package com.medical.service;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

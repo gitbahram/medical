@@ -1,4 +1,4 @@
-package com.demisco.config;
+package com.medical.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ import org.springframework.webflow.mvc.servlet.FlowHandlerMapping;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.demisco")
+@ComponentScan("com.medical")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Autowired

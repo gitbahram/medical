@@ -1,4 +1,4 @@
-package com.demisco.config;
+package com.medical.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,7 +49,7 @@ public class DatabaseConfig {
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("com.demisco.model");
+        factoryBean.setPackagesToScan("com.medical.model");
         factoryBean.setConfigLocation(new ClassPathResource("hibernate.cfg.xml"));
         return factoryBean;
     }

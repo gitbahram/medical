@@ -1,9 +1,8 @@
-package com.demisco.web;
+package com.medical.web;
 
-import com.demisco.model.Region;
-import com.demisco.service.RegionService;
+import com.medical.model.Region;
+import com.medical.service.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.RequestContext;
 import org.springframework.webflow.action.MultiAction;
