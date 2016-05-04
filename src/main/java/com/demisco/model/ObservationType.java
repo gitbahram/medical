@@ -1,9 +1,16 @@
 package com.demisco.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by bahram on 5/3/16.
  */
+@Entity
+@Table(name = "observation_type")
 public class ObservationType {
+    @Column(name = "code")
     private String code;
 
     public String getCode() {

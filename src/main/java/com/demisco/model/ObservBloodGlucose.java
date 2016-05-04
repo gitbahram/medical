@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "observ_blood_glucose")
 public class ObservBloodGlucose {
-    @Column(name = "region_name")
+    @Column(name = "bloodglucose")
     private Long bloodGlucose;
 
     public Long getBloodGlucose() {
