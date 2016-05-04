@@ -1,7 +1,6 @@
 package com.medical.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,6 +16,8 @@ public class Plan {
     private Date endDate;
     private PlanStatus planStatus;
 
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
     public Patient getPatient() {
         return patient;
     }
@@ -25,6 +26,8 @@ public class Plan {
         this.patient = patient;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "person_id")
     public Person getPerson() {
         return person;
     }
@@ -33,6 +36,8 @@ public class Plan {
         this.person = person;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "planTemplate_id")
     public PlanTemplate getPlanTemplate() {
         return planTemplate;
     }
@@ -41,6 +46,8 @@ public class Plan {
         this.planTemplate = planTemplate;
     }
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "start_date")
     public Date getStartDate() {
         return startDate;
     }
@@ -48,7 +55,8 @@ public class Plan {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-
+    @Temporal(TemporalType.DATE)
+    @Column(name = "end_date")
     public Date getEndDate() {
         return endDate;
     }
@@ -57,6 +65,8 @@ public class Plan {
         this.endDate = endDate;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "plan_status")
     public PlanStatus getPlanStatus() {
         return planStatus;
     }
