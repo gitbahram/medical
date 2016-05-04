@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="hrTemplate" template="/WEB-INF/views/template/hrTemplate.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+    </definition>
+
+    <definition name="homeView" extends="hrTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/region_mng/home2.jsp"/>
+    </definition>
+
+
+    <definition name="employeeEdit" extends="hrTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/region_mng/employee_edit.jsp"/>
+    </definition>
+</tiles-definitions>

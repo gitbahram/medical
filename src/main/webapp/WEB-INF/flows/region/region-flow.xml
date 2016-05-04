@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="regionSingleView">
+
+
+    <on-start>
+        <evaluate expression="regionAction.hello()"/>
+        <set name="flowScope.status" value="'IN_PROGRESS'"/>
+        <set name="flowScope.formAction" value="regionAction"/>
+    </on-start>
+    <view-state id="regionSingleView" view="homeView" model="region">
+
+        <on-entry>
+            <evaluate expression="formAction.loadAllRegions()" result="flowScope.regionList"/>
+        </on-entry>
+        <transition on="editEmployee" bind="true" validate="true"
+                    to="checkAndRedirectToEmployee">
+
+        </transition>
+    </view-state>
+    <view-state id="employeeSingleView"  view="employeeEdit">
+
+    </view-state>
+
+    <action-state id="checkAndRedirectToEmployee">
+        <evaluate expression="formAction.checkCurrentState(flowRequestContext)"/>
+        <transition on="error" to="regionSingleView"/>
+        <transition on="success" to="employeeSingleView"/>
+    </action-state>
+
+</flow>

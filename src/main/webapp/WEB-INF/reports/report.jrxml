@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89d9a059-d5cb-4fa5-b2a8-08503ea68d0e">
+	<property name="ireport.zoom" value="0.9313819845887331"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" hAlign="Center" vAlign="Middle" fontSize="13" isItalic="true"/>
+	<subDataset name="Jobs" uuid="f00bb601-0c09-4d65-b460-3bf465ef04a1">
+		<parameter name="depId" class="java.math.BigDecimal"/>
+		<queryString language="SQL">
+			<![CDATA[select * from JOB_HISTORY t]]>
+		</queryString>
+		<field name="EMPLOYEE_ID" class="java.math.BigDecimal"/>
+		<field name="START_DATE" class="java.sql.Timestamp"/>
+		<field name="END_DATE" class="java.sql.Timestamp"/>
+		<field name="JOB_ID" class="java.lang.String"/>
+		<field name="DEPARTMENT_ID" class="java.math.BigDecimal"/>
+	</subDataset>
+	<parameter name="regionId" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select e.employee_id , e.first_name , e.last_name , e.email , e.phone_number , e.salary
+  from Regions r, Countries c, locations l, Departments d, Employees e
+ where r.region_id = c.region_id
+   and c.country_id = l.country_id
+   and l.location_id = d.location_id
+   and d.department_id = e.department_id
+   and r.region_id = $P{regionId}]]>
+	</queryString>
+	<field name="EMPLOYEE_ID" class="java.math.BigDecimal"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="LAST_NAME" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="PHONE_NUMBER" class="java.lang.String"/>
+	<field name="SALARY" class="java.math.BigDecimal"/>
+	<variable name="SumSalary" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{SALARY}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="213" y="25" width="181" height="37" uuid="a3d24414-f71f-4f79-a024-bc59003a51de"/>
+				<text><![CDATA[My First Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="f580dc86-3fa8-4420-ab13-bd9e4b52995a"/>
+			</line>
+			<line>
+				<reportElement x="0" y="32" width="555" height="1" uuid="50d41ca2-ced9-483e-98d1-a5b3ac71ba59"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="33" uuid="32b7a058-8ee8-4c8f-adf8-c83d41511b76"/>
+			</line>
+			<line>
+				<reportElement x="553" y="1" width="2" height="32" uuid="5dec8407-d5d0-427e-a158-2b901333eb06"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="2" width="100" height="20" uuid="a7ec7b9a-dce9-491c-9e24-1868352af53f"/>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="100" height="20" uuid="18fe6ec0-7bea-4b7b-93ec-b17219705055"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="2" width="100" height="20" uuid="abb75de7-7c2a-490f-9343-a9a3a611673c"/>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="2" width="100" height="20" uuid="2eb08f61-f6df-454f-9ec9-24c79aff2fee"/>
+				<text><![CDATA[PHONE_NUMBER]]></text>
+			</staticText>
+			<line>
+				<reportElement x="101" y="0" width="1" height="32" uuid="9de42c49-49f9-4be5-a46a-f5495d154e8b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="100" height="20" uuid="25da7ca9-c22e-47ce-aa14-28543816d4e7"/>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="0" width="98" height="20" uuid="e44bcefe-9b21-4b25-837a-eca0bd9063a6"/>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="d149cb6e-1ae3-4cb1-90cc-095158ba27d4"/>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="1" width="100" height="20" uuid="da781651-3345-4994-af79-1c5d7734a8d5"/>
+				<textFieldExpression><![CDATA[$F{PHONE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="101" y="-1" width="1" height="22" uuid="4ac708cb-4075-4cdf-a0c7-f83c6d28ecc4"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="58" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="###,###,###,###,###">
+				<reportElement x="100" y="16" width="100" height="20" uuid="fddf7e03-4282-45b8-8f04-473b918b1bc1"/>
+				<textFieldExpression><![CDATA[$V{SumSalary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="16" width="100" height="20" uuid="7e4ed4da-b4cf-4652-b9fd-4e7e08940b7a"/>
+				<text><![CDATA[Sum Salay is :]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="27" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" x="76" y="0" width="360" height="20" uuid="e91a5cc1-8ceb-41ae-8f94-98230a3893b6"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Jobs" uuid="ff3fa69c-9320-4682-ad21-459236e1d394">
+						<datasetParameter name="depId">
+							<datasetParameterExpression><![CDATA[$F{EMPLOYEE_ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="efe5acfd-20a0-4a88-be0d-4e232acf38d5">
+						<jr:detailCell height="34" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="34" uuid="14dbc037-a905-47a8-bc7b-a6b8f3e16d64"/>
+								<textFieldExpression><![CDATA[$F{END_DATE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="4b86ce9d-0ae3-4152-8251-7b1ba748d8b5">
+						<jr:detailCell height="34" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="34" uuid="c0b67a0b-059b-4fe7-bf60-e5ac52f41a1a"/>
+								<textFieldExpression><![CDATA[$F{START_DATE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
