@@ -1,18 +1,18 @@
 package com.medical.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by bahram on 5/3/16.
  */
 @Entity
 @Table
-public class PlanTemplate extends SimpleEntity{
+public class PlanTemplate {
     private String description;
     private Doctor doctor;
     private Period period;
 
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -21,6 +21,8 @@ public class PlanTemplate extends SimpleEntity{
         this.description = description;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
     public Doctor getDoctor() {
         return doctor;
     }
@@ -28,7 +30,8 @@ public class PlanTemplate extends SimpleEntity{
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
-
+    @ManyToOne
+    @JoinColumn(name = "period_id")
     public Period getPeriod() {
         return period;
     }
