@@ -1,7 +1,6 @@
 package com.medical.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -19,6 +18,7 @@ public class Person {
     private Long nationalId;
     private String fixedName;
 
+    @Column(name = "firstName")
     public String getFirstName() {
         return firstName;
     }
@@ -26,7 +26,7 @@ public class Person {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    @Column(name = "lastName")
     public String getLastName() {
         return lastName;
     }
@@ -34,7 +34,8 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+    @Temporal(TemporalType.DATE)
+    @Column(name = "birthDate")
     public Date getBirthDate() {
         return birthDate;
     }
@@ -42,7 +43,7 @@ public class Person {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
-
+    @Column(name = "gender")
     public int getGender() {
         return gender;
     }
@@ -50,7 +51,7 @@ public class Person {
     public void setGender(int gender) {
         this.gender = gender;
     }
-
+    @Column(name = "phone")
     public String getPhone() {
         return phone;
     }
@@ -58,7 +59,7 @@ public class Person {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
+    @Column(name = "address")
     public String getAddress() {
         return address;
     }
@@ -66,7 +67,7 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
-
+    @Column(name = "nationalId")
     public Long getNationalId() {
         return nationalId;
     }
@@ -74,7 +75,7 @@ public class Person {
     public void setNationalId(Long nationalId) {
         this.nationalId = nationalId;
     }
-
+    @Column(name = "fixedName")
     public String getFixedName() {
         return fixedName;
     }
