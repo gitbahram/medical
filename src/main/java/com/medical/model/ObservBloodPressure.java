@@ -1,5 +1,6 @@
 package com.medical.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 public class ObservBloodPressure {
     private Long systolic;
     private Long diastolic;
-
+    @Column(name = "diastolic")
     public Long getDiastolic() {
         return diastolic;
     }
@@ -19,7 +20,7 @@ public class ObservBloodPressure {
     public void setDiastolic(Long diastolic) {
         this.diastolic = diastolic;
     }
-
+    @Column(name = "systolic")
     public Long getSystolic() {
         return systolic;
     }
