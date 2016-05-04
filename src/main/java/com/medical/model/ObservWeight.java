@@ -1,5 +1,6 @@
 package com.medical.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table
 public class ObservWeight {
     private Long weight;
-
+    @Column(name = "weight")
     public Long getWeight() {
         return weight;
     }
