@@ -1,7 +1,6 @@
 package com.medical.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -10,12 +9,15 @@ import java.util.Date;
 @Entity
 @Table
 public class Period {
+
     private Date startDate;
     private Date endDate;
     private Boolean disabled;
     private Doctor doctor;
     private Patient patient;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "start_date")
     public Date getStartDate() {
         return startDate;
     }
@@ -24,6 +26,8 @@ public class Period {
         this.startDate = startDate;
     }
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "start_date")
     public Date getEndDate() {
         return endDate;
     }
@@ -32,6 +36,7 @@ public class Period {
         this.endDate = endDate;
     }
 
+    @Column(name = "disabled")
     public Boolean getDisabled() {
         return disabled;
     }
@@ -40,6 +45,7 @@ public class Period {
         this.disabled = disabled;
     }
 
+    @Column(name = "doctor")
     public Doctor getDoctor() {
         return doctor;
     }
@@ -48,6 +54,7 @@ public class Period {
         this.doctor = doctor;
     }
 
+    @Column(name = "patient")
     public Patient getPatient() {
         return patient;
     }
