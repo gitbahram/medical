@@ -5,18 +5,18 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="connection.url">
-            jdbc:oracle:thin:@127.0.0.1:1521:XE
+            jdbc:mysql://localhost/medical
         </property>
         <property name="connection.driver_class">
-            oracle.jdbc.driver.OracleDriver
+            com.mysql.jdbc.Driver
         </property>
         <property name="connection.username">
-            hr
+            root
         </property>
         <property name="connection.password">
-            hr
+
         </property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.show_sql">true</property>
