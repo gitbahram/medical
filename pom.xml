@@ -134,6 +134,12 @@
       <artifactId>spring-webflow</artifactId>
       <version>${springwebflow-version}</version>
     </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.2</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>hr-mvc</finalName>
