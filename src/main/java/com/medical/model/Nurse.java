@@ -1,6 +1,8 @@
 package com.medical.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -8,9 +10,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "nurse")
-public class Nurse extends BaseEntity{
+public class Nurse extends BaseEntity {
     private Person person;
 
+    @ManyToOne
+    @JoinColumn(name = "person_id")
     public Person getPerson() {
         return person;
     }

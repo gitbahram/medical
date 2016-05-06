@@ -9,10 +9,10 @@ import javax.persistence.MappedSuperclass;
  */
 @MappedSuperclass
 public class BaseEntity {
-    @Id
-    @Column(name = "id")
-    private Long id;
 
+    private  Long id;
+    @Id
+    @Column(name="id")
     public Long getId() {
         return id;
     }

@@ -27,7 +27,7 @@ public class Period extends BaseEntity{
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "start_date")
+    @Column(name = "end_date")
     public Date getEndDate() {
         return endDate;
     }
@@ -45,7 +45,8 @@ public class Period extends BaseEntity{
         this.disabled = disabled;
     }
 
-    @Column(name = "doctor")
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
     public Doctor getDoctor() {
         return doctor;
     }
@@ -54,7 +55,8 @@ public class Period extends BaseEntity{
         this.doctor = doctor;
     }
 
-    @Column(name = "patient")
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
     public Patient getPatient() {
         return patient;
     }

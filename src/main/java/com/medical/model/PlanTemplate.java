@@ -6,8 +6,8 @@ import javax.persistence.*;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
-public class PlanTemplate extends BaseEntity{
+@Table(name = "PLAN_TEMPLATE")
+public class PlanTemplate extends BaseEntity {
     private String description;
     private Doctor doctor;
     private Period period;
@@ -22,7 +22,7 @@ public class PlanTemplate extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "DOCTOR_ID")
     public Doctor getDoctor() {
         return doctor;
     }
@@ -30,6 +30,7 @@ public class PlanTemplate extends BaseEntity{
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
+
     @ManyToOne
     @JoinColumn(name = "period_id")
     public Period getPeriod() {
