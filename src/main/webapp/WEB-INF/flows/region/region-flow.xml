@@ -6,15 +6,15 @@
 
 
     <on-start>
-        <evaluate expression="regionAction.hello()"/>
-        <set name="flowScope.status" value="'IN_PROGRESS'"/>
+        <!--<evaluate expression="regionAction.hello()"/>-->
+        <!--<set name="flowScope.status" value="'IN_PROGRESS'"/>-->
         <set name="flowScope.formAction" value="regionAction"/>
     </on-start>
     <view-state id="regionSingleView" view="homeView" model="region">
 
-        <on-entry>
-            <evaluate expression="formAction.loadAllRegions()" result="flowScope.regionList"/>
-        </on-entry>
+        <!--<on-entry>-->
+            <!--<evaluate expression="formAction.loadAllRegions()" result="flowScope.regionList"/>-->
+        <!--</on-entry>-->
         <transition on="editEmployee" bind="true" validate="true"
                     to="checkAndRedirectToEmployee">
 

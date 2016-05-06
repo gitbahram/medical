@@ -1,6 +1,7 @@
 package com.medical.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-public class Person extends BaseEntity{
+public class Person extends BaseEntity implements Serializable {
     private String firstName;
     private String lastName;
     private Date birthDate;
@@ -26,6 +27,7 @@ public class Person extends BaseEntity{
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     @Column(name = "lastName")
     public String getLastName() {
         return lastName;
@@ -34,6 +36,7 @@ public class Person extends BaseEntity{
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     @Temporal(TemporalType.DATE)
     @Column(name = "birthDate")
     public Date getBirthDate() {
@@ -43,6 +46,7 @@ public class Person extends BaseEntity{
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
     @Column(name = "gender")
     public int getGender() {
         return gender;
@@ -51,6 +55,7 @@ public class Person extends BaseEntity{
     public void setGender(int gender) {
         this.gender = gender;
     }
+
     @Column(name = "phone")
     public String getPhone() {
         return phone;
@@ -59,6 +64,7 @@ public class Person extends BaseEntity{
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     @Column(name = "address")
     public String getAddress() {
         return address;
@@ -67,6 +73,7 @@ public class Person extends BaseEntity{
     public void setAddress(String address) {
         this.address = address;
     }
+
     @Column(name = "nationalId")
     public Long getNationalId() {
         return nationalId;
@@ -75,6 +82,7 @@ public class Person extends BaseEntity{
     public void setNationalId(Long nationalId) {
         this.nationalId = nationalId;
     }
+
     @Column(name = "fixedName")
     public String getFixedName() {
         return fixedName;

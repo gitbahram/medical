@@ -14,7 +14,7 @@ import java.util.List;
 public class RegionService {
 
     @Autowired
-    private HibernateService hibernateService;
+    private CrudService hibernateService;
 
     @Transactional(readOnly = true)
     public List<Region> findRegionsByName(String name) {

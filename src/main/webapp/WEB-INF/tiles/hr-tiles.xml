@@ -14,6 +14,10 @@
         <put-attribute name="content" value="/WEB-INF/views/region_mng/home2.jsp"/>
     </definition>
 
+    <definition name="receptionView" extends="hrTemplate">
+        <put-attribute name="content" value="/WEB-INF/views/reception/reception.jsp"/>
+    </definition>
+
 
     <definition name="employeeEdit" extends="hrTemplate">
         <put-attribute name="content" value="/WEB-INF/views/region_mng/employee_edit.jsp"/>

@@ -1,8 +1,6 @@
 package com.medical.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 /**
  * Created by bahram on 5/6/16.
@@ -13,6 +11,7 @@ public class BaseEntity {
     private  Long id;
     @Id
     @Column(name="id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
     public Long getId() {
         return id;
     }
