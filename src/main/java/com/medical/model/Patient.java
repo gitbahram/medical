@@ -7,10 +7,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table
-public class Patient {
+public class Patient extends BaseEntity{
     private Person person;
-@ManyToOne
-@JoinColumn(name = "person_id")
+
+    @ManyToOne
+    @JoinColumn(name = "person_id")
     public Person getPerson() {
         return person;
     }
@@ -18,4 +19,5 @@ public class Patient {
     public void setPerson(Person person) {
         this.person = person;
     }
+
 }
