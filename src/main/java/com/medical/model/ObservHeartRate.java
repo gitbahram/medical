@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class ObservHeartRate {
+public class ObservHeartRate extends BaseEntity{
     private Long hearRate;
     @Column(name = "hearRate")
     public Long getHearRate() {

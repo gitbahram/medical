@@ -8,5 +8,5 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class PlanStatus {
+public class PlanStatus extends BaseEntity{
 }

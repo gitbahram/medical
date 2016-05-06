@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "observation_type")
-public class ObservationType {
+public class ObservationType extends BaseEntity{
     @Column(name = "code")
     private String code;
 

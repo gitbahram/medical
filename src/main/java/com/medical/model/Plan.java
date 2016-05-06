@@ -8,7 +8,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-public class Plan {
+public class Plan extends BaseEntity{
     private Patient patient;
     private Person person;
     private PlanTemplate planTemplate;

@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class ObservBloodPressure {
+public class ObservBloodPressure extends BaseEntity {
     private Long systolic;
     private Long diastolic;
     @Column(name = "diastolic")

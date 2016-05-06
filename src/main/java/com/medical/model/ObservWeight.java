@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-public class ObservWeight {
+public class ObservWeight extends BaseEntity{
     private Long weight;
     @Column(name = "weight")
     public Long getWeight() {

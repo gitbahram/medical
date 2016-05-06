@@ -8,7 +8,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-public class Period {
+public class Period extends BaseEntity{
 
     private Date startDate;
     private Date endDate;

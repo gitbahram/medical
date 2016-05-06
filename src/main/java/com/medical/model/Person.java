@@ -8,7 +8,7 @@ import java.util.Date;
  */
 @Entity
 @Table
-public class Person {
+public class Person extends BaseEntity{
     private String firstName;
     private String lastName;
     private Date birthDate;

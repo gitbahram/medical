@@ -9,7 +9,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "observ_blood_glucose")
-public class ObservBloodGlucose {
+public class ObservBloodGlucose extends BaseEntity{
     @Column(name = "bloodglucose")
     private Long bloodGlucose;
 

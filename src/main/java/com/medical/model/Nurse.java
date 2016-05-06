@@ -8,7 +8,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "nurse")
-public class Nurse {
+public class Nurse extends BaseEntity{
     private Person person;
 
     public Person getPerson() {

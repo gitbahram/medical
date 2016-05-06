@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table
-public class PlanTemplate {
+public class PlanTemplate extends BaseEntity{
     private String description;
     private Doctor doctor;
     private Period period;
