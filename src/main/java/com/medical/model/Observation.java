@@ -1,7 +1,6 @@
 package com.medical.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -16,6 +15,8 @@ public class Observation extends BaseEntity {
     private Plan plan;
     private Patient patient;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "taken_date")
     public Date getTakenDate() {
         return takenDate;
     }
@@ -24,6 +25,8 @@ public class Observation extends BaseEntity {
         this.takenDate = takenDate;
     }
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "submit_date")
     public Date getSubmitDate() {
         return submitDate;
     }
@@ -32,6 +35,8 @@ public class Observation extends BaseEntity {
         this.submitDate = submitDate;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "observation_type_id")
     public ObservationType getObservationType() {
         return observationType;
     }
@@ -40,6 +45,8 @@ public class Observation extends BaseEntity {
         this.observationType = observationType;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "plan_id")
     public Plan getPlan() {
         return plan;
     }
@@ -48,6 +55,8 @@ public class Observation extends BaseEntity {
         this.plan = plan;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
     public Patient getPatient() {
         return patient;
     }
