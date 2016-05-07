@@ -1,6 +1,7 @@
 package com.medical.service;
 
 import com.medical.model.BaseEntity;
+import com.medical.model.Person;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,6 @@ public class CrudService implements Serializable{
     }
 
     public BaseEntity save(BaseEntity baseEntity) {
-        return (BaseEntity) sessionFactory.getCurrentSession().save(baseEntity);
+        return (BaseEntity) sessionFactory.getCurrentSession().merge(baseEntity);
     }
 }

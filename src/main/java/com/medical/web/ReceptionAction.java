@@ -9,6 +9,7 @@ import org.springframework.webflow.action.MultiAction;
 import org.springframework.webflow.execution.Event;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by bahram on 5/6/16.
@@ -18,9 +19,13 @@ public class ReceptionAction extends MultiAction implements Serializable {
     @Autowired
     ReceptionService receptionService;
 
-    public Event receptionAction(Person person) {
-        person.getAddress();
-        receptionService.reception(person);
+    public Event saveAction(Person person) {
+        person.setAddress("fsdfs");
+        person.setBirthDate(new Date());
+        person.setId(2L);
+        person.setNationalId(1324L);
+        person.setGender(1);
+        Person person1 = receptionService.reception(person);
         return success();
     }
 

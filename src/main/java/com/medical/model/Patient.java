@@ -6,12 +6,15 @@ import javax.persistence.*;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
-public class Patient extends BaseEntity{
+@Table(name = "PATIENT")
+public class Patient extends BaseEntity {
     private Person person;
 
+
+
+
     @ManyToOne
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "PERSON_ID")
     public Person getPerson() {
         return person;
     }

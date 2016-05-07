@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name = "PERSON")
 public class Person extends BaseEntity implements Serializable {
     private String firstName;
     private String lastName;
@@ -19,7 +19,22 @@ public class Person extends BaseEntity implements Serializable {
     private Long nationalId;
     private String fixedName;
 
-    @Column(name = "firstName")
+
+    public Person() {
+    }
+
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "ID")
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+
+    @Column(name = "FIRST_NAME")
     public String getFirstName() {
         return firstName;
     }
@@ -28,7 +43,7 @@ public class Person extends BaseEntity implements Serializable {
         this.firstName = firstName;
     }
 
-    @Column(name = "lastName")
+    @Column(name = "LAST_NAME")
     public String getLastName() {
         return lastName;
     }
@@ -38,7 +53,7 @@ public class Person extends BaseEntity implements Serializable {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "birthDate")
+    @Column(name = "BIRTH_DATE")
     public Date getBirthDate() {
         return birthDate;
     }
@@ -47,7 +62,7 @@ public class Person extends BaseEntity implements Serializable {
         this.birthDate = birthDate;
     }
 
-    @Column(name = "gender")
+    @Column(name = "GENDER")
     public int getGender() {
         return gender;
     }
@@ -56,7 +71,7 @@ public class Person extends BaseEntity implements Serializable {
         this.gender = gender;
     }
 
-    @Column(name = "phone")
+    @Column(name = "PHONE")
     public String getPhone() {
         return phone;
     }
@@ -65,7 +80,7 @@ public class Person extends BaseEntity implements Serializable {
         this.phone = phone;
     }
 
-    @Column(name = "address")
+    @Column(name = "ADDRESS")
     public String getAddress() {
         return address;
     }
@@ -74,7 +89,7 @@ public class Person extends BaseEntity implements Serializable {
         this.address = address;
     }
 
-    @Column(name = "nationalId")
+    @Column(name = "NATIONAL_ID")
     public Long getNationalId() {
         return nationalId;
     }
@@ -83,7 +98,7 @@ public class Person extends BaseEntity implements Serializable {
         this.nationalId = nationalId;
     }
 
-    @Column(name = "fixedName")
+    @Column(name = "FIXED_NAME")
     public String getFixedName() {
         return fixedName;
     }
