@@ -8,10 +8,10 @@ import javax.persistence.Table;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name = "OBSERV_HEART_RATE")
 public class ObservHeartRate extends BaseEntity{
     private Long hearRate;
-    @Column(name = "hearRate")
+    @Column(name = "HEAR_RATE")
     public Long getHearRate() {
         return hearRate;
     }

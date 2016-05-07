@@ -8,10 +8,10 @@ import javax.persistence.Table;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name = "OBSERV_WEIGHT")
 public class ObservWeight extends BaseEntity{
     private Long weight;
-    @Column(name = "weight")
+    @Column(name = "WEIGHT")
     public Long getWeight() {
         return weight;
     }

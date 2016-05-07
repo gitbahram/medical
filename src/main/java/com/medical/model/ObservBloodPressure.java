@@ -8,11 +8,11 @@ import javax.persistence.Table;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name = "OBSERV_BLOOD_PRESSURE")
 public class ObservBloodPressure extends BaseEntity {
     private Long systolic;
     private Long diastolic;
-    @Column(name = "diastolic")
+    @Column(name = "DIASTOLIC")
     public Long getDiastolic() {
         return diastolic;
     }
@@ -20,7 +20,7 @@ public class ObservBloodPressure extends BaseEntity {
     public void setDiastolic(Long diastolic) {
         this.diastolic = diastolic;
     }
-    @Column(name = "systolic")
+    @Column(name = "SYSTOLIC")
     public Long getSystolic() {
         return systolic;
     }

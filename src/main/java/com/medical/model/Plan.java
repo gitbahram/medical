@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name = "PLAN")
 public class Plan extends BaseEntity{
     private Patient patient;
     private Person person;
@@ -17,7 +17,7 @@ public class Plan extends BaseEntity{
     private PlanStatus planStatus;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "PATIENT_ID")
     public Patient getPatient() {
         return patient;
     }
@@ -27,7 +27,7 @@ public class Plan extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "PERSON_ID")
     public Person getPerson() {
         return person;
     }
@@ -37,7 +37,7 @@ public class Plan extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "planTemplate_id")
+    @JoinColumn(name = "PLANTEMPLATE_ID")
     public PlanTemplate getPlanTemplate() {
         return planTemplate;
     }
@@ -47,7 +47,7 @@ public class Plan extends BaseEntity{
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "start_date")
+    @Column(name = "START_DATE")
     public Date getStartDate() {
         return startDate;
     }
@@ -56,7 +56,7 @@ public class Plan extends BaseEntity{
         this.startDate = startDate;
     }
     @Temporal(TemporalType.DATE)
-    @Column(name = "end_date")
+    @Column(name = "END_DATE")
     public Date getEndDate() {
         return endDate;
     }
@@ -66,7 +66,7 @@ public class Plan extends BaseEntity{
     }
 
     @ManyToOne
-    @JoinColumn(name = "plan_status")
+    @JoinColumn(name = "PLAN_STATUS")
     public PlanStatus getPlanStatus() {
         return planStatus;
     }

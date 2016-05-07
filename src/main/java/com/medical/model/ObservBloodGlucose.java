@@ -8,9 +8,9 @@ import javax.persistence.Table;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table(name = "observ_blood_glucose")
+@Table(name = "OBSERV_BLOOD_GLUCOSE")
 public class ObservBloodGlucose extends BaseEntity{
-    @Column(name = "bloodglucose")
+    @Column(name = "BLOODGLUCOSE")
     private Long bloodGlucose;
 
     public Long getBloodGlucose() {

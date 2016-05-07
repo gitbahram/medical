@@ -9,10 +9,6 @@ import javax.persistence.*;
 @Table(name = "PATIENT")
 public class Patient extends BaseEntity {
     private Person person;
-
-
-
-
     @ManyToOne
     @JoinColumn(name = "PERSON_ID")
     public Person getPerson() {

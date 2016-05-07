@@ -32,7 +32,7 @@ public class PlanTemplate extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "period_id")
+    @JoinColumn(name = "PERIOD_ID")
     public Period getPeriod() {
         return period;
     }

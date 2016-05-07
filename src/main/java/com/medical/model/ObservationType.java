@@ -8,9 +8,9 @@ import javax.persistence.Table;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table(name = "observation_type")
+@Table(name = "OBSERVATION_TYPE")
 public class ObservationType extends BaseEntity{
-    @Column(name = "code")
+    @Column(name = "CODE")
     private String code;
 
     public String getCode() {

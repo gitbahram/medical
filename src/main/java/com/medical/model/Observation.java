@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by bahram on 5/3/16.
  */
 @Entity
-@Table
+@Table(name="OBSERVATION")
 public class Observation extends BaseEntity {
     private Date takenDate;
     private Date submitDate;
@@ -16,7 +16,7 @@ public class Observation extends BaseEntity {
     private Patient patient;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "taken_date")
+    @Column(name = "TAKEN_DATE")
     public Date getTakenDate() {
         return takenDate;
     }
@@ -26,7 +26,7 @@ public class Observation extends BaseEntity {
     }
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "submit_date")
+    @Column(name = "SUBMIT_DATE")
     public Date getSubmitDate() {
         return submitDate;
     }
@@ -36,7 +36,7 @@ public class Observation extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "observation_type_id")
+    @JoinColumn(name = "OBSERVATION_TYPE_ID")
     public ObservationType getObservationType() {
         return observationType;
     }
@@ -46,7 +46,7 @@ public class Observation extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "plan_id")
+    @JoinColumn(name = "PLAN_ID")
     public Plan getPlan() {
         return plan;
     }
@@ -56,7 +56,7 @@ public class Observation extends BaseEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "PATIENT_ID")
     public Patient getPatient() {
         return patient;
     }
