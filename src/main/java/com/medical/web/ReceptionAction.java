@@ -20,11 +20,7 @@ public class ReceptionAction extends MultiAction implements Serializable {
     ReceptionService receptionService;
 
     public Event saveAction(Person person) {
-        person.setAddress("fsdfs");
-        person.setBirthDate(new Date());
-        person.setId(2L);
-        person.setNationalId(1324L);
-        person.setGender(1);
+
         Person person1 = receptionService.reception(person);
         return success();
     }
